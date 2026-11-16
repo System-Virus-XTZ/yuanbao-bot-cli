@@ -2071,7 +2071,9 @@ static std::atomic<bool> g_exit_requested{false};
 // 问题：静态库 libcrypto.a 引用 MSVCRT 风格的导入符号 __imp__vsnprintf，
 //       而 UCRT 版 MinGW-w64 不提供该导入 thunk，导致静态链接失败。
 // 解决：手工定义 __imp__vsnprintf 为函数指针数据符号，转发到 vsnprintf。
-#if defined(_WIN32) && defined(__MINGW32__)
+// 注意：仅限 UCRT 工具链（_UCRT）；msvcrt 工具链（如 msys2 MINGW64）的
+//       libmsvcrt.a 已提供该符号，重复定义会导致链接错误。
+#if defined(_WIN32) && defined(__MINGW32__) && defined(_UCRT)
 extern "C" {
 static int vsnprintf_shim(char* s, size_t n, const char* format, va_list ap) {
     return vsnprintf(s, n, format, ap);
