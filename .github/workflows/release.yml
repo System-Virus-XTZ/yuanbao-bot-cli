@@ -46,7 +46,8 @@ jobs:
       - name: Build (x64, static)
         run: |
           g++ -std=c++17 -O2 -Wall -I. main.cpp -o main.exe \
-            -static -static-libgcc -static-libstdc++ -lws2_32 -lssl -lcrypto
+            -static -static-libgcc -static-libstdc++ \
+            -lssl -lcrypto -lws2_32 -lcrypt32 -lbcrypt
           strip main.exe
           mkdir -p dist
           mv main.exe dist/
