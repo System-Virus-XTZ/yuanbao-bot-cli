@@ -94,6 +94,8 @@ g++ -std=c++17 -O2 -Wall -I. main.cpp -o yuanbao -lpthread -lrt -lm -lssl -lcryp
 
 ### 运行（纯命令行，无 Web 前端）
 
+> 💡 也可直接下载 [Releases](https://github.com/System-Virus-XTZ/yuanbao-bot-cli/releases) 中的预编译二进制（Windows x64 静态版 / Linux x86_64，由 GitHub Actions 自动构建并附 SHA-256 校验），跳过编译步骤。
+
 复制 `config.example.json` 为 `config.json`，填入 `APP_KEY` / `APP_SECRET`，然后直接传参执行：
 
 ```bash
