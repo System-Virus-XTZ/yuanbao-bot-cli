@@ -1,0 +1,51 @@
+{
+  "API_DOMAIN": "bot.yuanbao.tencent.com",
+  "WS_URL": "wss://bot-wss.yuanbao.tencent.com/wss/connection",
+  "HEARTBEAT_INTERVAL": 10,
+  "MSG_LOG_ENABLED": true,
+  "AI_CONTEXT_MESSAGES": 2000,
+  "EXEC_ENABLED": false,
+  "EXEC_SCOPE": "private",
+  "OWNER_ID": "",
+  "FILE_ROOTS": [],
+  "FILE_DENY_SYSTEM": true,
+  "AI_EXEC_ENABLED": false,
+  "FILE_OPS_ENABLED": false,
+  "EXEC_DENY_ENABLED": true,
+  "EXEC_TIMEOUT": 30,
+  "MCP_ENABLED": true,
+  "MCP_SERVERS": [
+    {
+      "name": "test",
+      "command": "node",
+      "args": [
+        "mcp/test_server.js"
+      ],
+      "env": {}
+    }
+  ],
+  "SKILLS_ENABLED": true,
+  "SKILLS_DIRS": [],
+  "SUBAGENT_MAX_CONCURRENT": 4,
+  "SUBAGENT_TIMEOUT_SEC": 120,
+  "WEB_SEARCH_ENABLED": true,
+  "SEARCH_API_URL": "",
+  "SEARCH_API_KEY": "",
+  "SEARCH_COUNT": 5,
+  "WEB_FETCH_ENABLED": true,
+  "ACCOUNTS": [
+    {
+      "NAME": "main",
+      "YUANBAO_ID": "",
+      "APP_KEY": "",
+      "APP_SECRET": "",
+      "LLM_API_URL": "",
+      "LLM_API_KEY": "",
+      "LLM_MODEL": "",
+      "LLM_SYSTEM_PROMPT": "你是一个友好的群聊助手，用简洁、口语化的中文回复，2-3 句话以内。",
+      "LLM_MAX_TOKENS": 65536,
+      "LLM_TEMPERATURE": 0.8,
+      "LLM_TIMEOUT": 300
+    }
+  ]
+}
